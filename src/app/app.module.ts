@@ -2,19 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { SandBoxComponent } from './sand-box/sand-box.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { CampaignComponent } from './components/campaign/campaign.component';
+import { AppRoutesModule } from './app.routes.module';
+import { CampaignItemComponent } from './components/campaign/campaign-item/campaign-item.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SideBarComponent,
-    SandBoxComponent
+    CampaignComponent,
+    CampaignItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

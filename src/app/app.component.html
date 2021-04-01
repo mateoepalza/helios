@@ -1,2 +1,11 @@
-<app-header></app-header>
-<app-side-bar></app-side-bar>
+<div class="app-container">
+    <app-header></app-header>
+    <div class="app-content">
+        <div class="app-content-bar">
+            <app-side-bar></app-side-bar>
+        </div>
+        <div class="sand-box-container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

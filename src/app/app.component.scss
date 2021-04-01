@@ -1,0 +1,13 @@
+.app-container{
+    display: flex;
+    flex-flow: column nowrap; 
+}
+.app-content{
+   display: flex; 
+   flex-flow: row nowrap;
+}
+.sand-box-container{
+    width: 100%;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+}

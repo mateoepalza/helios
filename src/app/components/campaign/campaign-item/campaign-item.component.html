@@ -1,0 +1,60 @@
+<div class="campaign-item">
+    <div class="campaign-image">
+        <div class="campaign-image-title">
+            <span>Covid-19</span>
+        </div>
+        <div class="campaign-image-icon">
+            <i class="fas fa-viruses"></i>
+        </div>
+    </div>
+    <div class="campaign-info">
+        <div class="row-c">
+            <div class="col-c">
+                <div class="col-c-icon"><i class="fas fa-fingerprint"></i></div>
+                <div class="col-c-info">
+                    <div class="info-title">Titulo de campaña</div>
+                    <div class="info-body">{{ campaignItem.title }}</div>
+                </div>
+            </div>
+            <div class="col-c">
+                <div class="col-c-icon"><i class="far fa-star"></i></div>
+                <div class="col-c-info">
+                    <div class="info-title">Tipo de campaña</div>
+                    <div class="info-body">{{ campaignItem.type }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row-c">
+            <div class="col-c">
+                <div class="col-c-icon"><i class="fas fa-bullhorn"></i></div>
+                <div class="col-c-info">
+                    <div class="info-title">Estatus de campaña</div>
+                    <div class="info-body">{{ campaignItem.status }}</div>
+                </div>
+            </div>
+            <div class="col-c">
+                <div class="col-c-icon"><i class="fas fa-users"></i></div>
+                <div class="col-c-info">
+                    <div class="info-title">Numero de usuarios impactados</div>
+                    <div class="info-body">{{ campaignItem.users }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row-c">
+            <div class="col-c">
+                <div class="col-c-icon"><i class="far fa-calendar-alt"></i></div>
+                <div class="col-c-info">
+                    <div class="info-title">Fecha y hora de creación</div>
+                    <div class="info-body">{{ campaignItem.createdAt | date:'dd/MM/yyyy - hh:mm a' }}</div>
+                </div>
+            </div>
+            <div class="col-c">
+                <div class="col-c-icon"><i class="far fa-calendar-alt"></i></div>
+                <div class="col-c-info">
+                    <div class="info-title">Fecha y hora de envío</div>
+                    <div class="info-body">{{ campaignItem.sentAt | date:'dd/MM/yyyy - hh:mm a' }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

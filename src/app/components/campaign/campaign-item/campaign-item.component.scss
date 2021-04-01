@@ -1,0 +1,70 @@
+.campaign-item{
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: 15px;
+    border: 1px solid #3E568C;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, rgba(20,53,106,0.3) 20%, rgba(255,255,255,0.2) 100%);
+
+}
+.campaign-image{
+    width: 20%;   
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-right: 4px solid #9169A8;
+}
+.campaign-image-title{
+    margin-bottom: 15px;
+    span{
+        color: #9169A8;
+        font-size: 25px;
+    }
+}
+.campaign-image-icon{
+    i{
+        font-size: 100px;
+        color: #9169A8;
+    }
+}
+.campaign-info{
+    width: 80%;
+}
+.row-c{
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.row-c:last-child{
+    border-bottom: 0px;
+}
+.col-c{
+    width: 50%;
+    display: flex;
+    flex-flow: row;
+    padding: 20px 15px;
+}
+.col-c:nth-child(odd){
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+.col-c-icon{
+    display: flex;
+    width: 70px;
+    margin-left: 25px;
+    align-items: center;
+    font-size: 35px;
+    color: #9169A8;
+}
+.col-c-info{
+    width: 100%;
+}
+.info-title{
+    font-size: 16px;
+    color: #9169A8;
+}
+.info-body{
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+}
