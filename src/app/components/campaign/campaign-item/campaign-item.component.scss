@@ -3,7 +3,7 @@
 
 
 .campaign-item{
-    @include flex-box(row nowrap, normal, normal);    
+    @include flex-box(row nowrap, initial, initial);    
     border-radius: 15px;
     border: 1px solid #3E568C;
     margin-bottom: 25px;
@@ -32,7 +32,7 @@
     width: 80%;
 }
 .row-c{
-    @include flex-box(row nowrap, normal, normal);
+    @include flex-box(row nowrap, initial, initial);
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 .row-c:last-child{
@@ -40,14 +40,14 @@
 }
 .col-c{
     width: 50%;
-    @include flex-box(row, normal, normal);
+    @include flex-box(row, initial, initial);
     padding: 20px 15px;
 }
 .col-c:nth-child(odd){
     border-right: 1px solid rgba(255,255,255,0.3);
 }
 .col-c-icon{
-    @include flex-box(row, normal, center);
+    @include flex-box(row, initial, center);
     width: 70px;
     margin-left: 25px;
     font-size: 35px;
@@ -94,14 +94,14 @@
 
 @media (max-width: 991.98px){
     .campaign-item{
-        @include flex-box(column nowrap, normal, normal);
+        @include flex-box(column nowrap, initial, initial);
     }
     .campaign-image{
         width: 100%;
-        @include flex-box(row nowrap, normal, normal);
+        @include flex-box(row nowrap, center, center);
         border: 0px;
         border-bottom: 3px solid #9169A8;
-        
+        padding: 10px 0px;
     }
     .campaign-image-title{
         margin: 0px;
@@ -118,7 +118,7 @@
 }
 @media (max-width: 767.98px){
     .row-c{
-        @include flex-box(row nowrap, normal, normal);
+        @include flex-box(row wrap, initial, initial);
         border: 0px !important;
     }
     .col-c{
@@ -126,7 +126,7 @@
         border: 0px !important;
         border-bottom: 1px solid rgba(255,255,255,0.3) !important;
     }
-    .col-c:last-child{
+    .row-c:last-child .col-c:last-child{
         border: 0px !important;
     }
 }

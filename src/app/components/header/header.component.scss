@@ -23,14 +23,14 @@
 }
 .nav-config{
     width: 200px;
-    @include flex-box(row nowrap, space-around, normal);
+    @include flex-box(row nowrap, space-around, initial);
     a{
         font-size: 30px;
         color: #677DD1;
     }
 }
 .nav-info-items{
-    @include flex-box(column nowrap, center, normal);
+    @include flex-box(column nowrap, center, initial);
     height: auto; 
     background-color: rgba(0,0,36,1);
     background-color: transparent !important;
@@ -72,7 +72,7 @@
    .nav-info{
        width: 70px;
        height: calc(100vh - 70px);
-       position: absolute;
+       position: fixed;
 
        right: -65px;
        top: 70px;
@@ -83,7 +83,7 @@
    } 
    .nav-info-items{
        a{
-           @include flex-box(row, center, normal);
+           @include flex-box(row, center, initial);
            font-size: 18px;
            span{
                display: block;
