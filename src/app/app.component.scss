@@ -1,6 +1,7 @@
 .app-container{
     display: flex;
     flex-flow: column nowrap; 
+    overflow: hidden;
 }
 .app-content{
    display: flex; 

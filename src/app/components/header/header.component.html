@@ -2,7 +2,7 @@
     <div class="nav-logo">
         <!--TODO-->
     </div>
-    <div class="nav-info">
+    <div class="nav-info" #subMenu>
         <div class="nav-info-items">
             <a href="#"><span><i class="fas fa-bullhorn"></i></span>39</a>
         </div>
@@ -21,9 +21,9 @@
         <div class="nav-info-items">
             <a href="#"><span><i class="fas fa-mobile-alt"></i></span>15</a>
         </div>
-        <div class="button-menu">
-            <i class="fas fa-chevron-right"></i>
-            <!--<i class="fas fa-chevron-left"></i>-->
+        <div class="button-menu" (click)="onToggle()">
+            <i class="fas fa-chevron-right" *ngIf="toggle"></i>
+            <i class="fas fa-chevron-left" *ngIf="!toggle"></i>
         </div>
     </div>
     <div class="nav-config">
