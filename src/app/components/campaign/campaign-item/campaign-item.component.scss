@@ -13,19 +13,19 @@
 .campaign-image{
     width: 20%;   
     @include flex-box(column nowrap, center, center);
-    border-right: 4px solid #9169A8;
+    border-right: 4px solid $item-color;
 }
 .campaign-image-title{
     margin-bottom: 15px;
     span{
-        color: #9169A8;
+        color: $item-color;
         font-size: 25px;
     }
 }
 .campaign-image-icon{
     i{
         font-size: 100px;
-        color: #9169A8;
+        color: $item-color;
     }
 }
 .campaign-info{
@@ -33,7 +33,7 @@
 }
 .row-c{
     @include flex-box(row nowrap, initial, initial);
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid $item-border;
 }
 .row-c:last-child{
     border-bottom: 0px;
@@ -44,21 +44,21 @@
     padding: 20px 15px;
 }
 .col-c:nth-child(odd){
-    border-right: 1px solid rgba(255,255,255,0.3);
+    border-right: 1px solid $item-border;
 }
 .col-c-icon{
     @include flex-box(row, initial, center);
     width: 70px;
     margin-left: 25px;
     font-size: 35px;
-    color: #9169A8;
+    color: $item-color;
 }
 .col-c-info{
     width: 100%;
 }
 .info-title{
     font-size: 15px;
-    color: #9169A8;
+    color: $item-color;
 }
 .info-body{
     font-size: 18px;
@@ -100,7 +100,7 @@
         width: 100%;
         @include flex-box(row nowrap, center, center);
         border: 0px;
-        border-bottom: 3px solid #9169A8;
+        border-bottom: 3px solid $item-color;
         padding: 10px 0px;
     }
     .campaign-image-title{
@@ -124,7 +124,7 @@
     .col-c{
         width: 100%;
         border: 0px !important;
-        border-bottom: 1px solid rgba(255,255,255,0.3) !important;
+        border-bottom: 1px solid $item-border !important;
     }
     .row-c:last-child .col-c:last-child{
         border: 0px !important;
