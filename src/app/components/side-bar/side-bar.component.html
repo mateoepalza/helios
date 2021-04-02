@@ -1,4 +1,4 @@
-<div class="side-bar-movement">
+<div class="side-bar-movement" #sideBar>
     <div class="side-bar-container">
         <a [routerLink]="['/dashboard']" routerLinkActive="activeLink" class="side-bar-item">
             <div class="side-bar-item-icon">
@@ -40,7 +40,7 @@
 
     </div>
     <div class="button-menu" (click)="onToggle()">
-        <i class="fas fa-chevron-right"></i>
-        <!--<i class="fas fa-chevron-left"></i>-->
+        <i class="fas fa-chevron-right" *ngIf="!toggle"></i>
+        <i class="fas fa-chevron-left" *ngIf="toggle"></i>
     </div>
 </div>
