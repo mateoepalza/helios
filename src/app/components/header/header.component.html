@@ -1,25 +1,26 @@
 <nav class="nav-container">
     <div class="nav-logo">
         <!--TODO-->
+        <img src="assets/img/logo1.png">
     </div>
     <div class="nav-info" #subMenu>
         <div class="nav-info-items">
-            <a href="#"><span><i class="fas fa-bullhorn"></i></span>39</a>
+            <a href="#"><span><i class="fas fa-bullhorn"></i></span>{{ statistics.announcement }}</a>
         </div>
         <div class="nav-info-items">
-            <a href="#"><span><i class="far fa-envelope"></i></span>57</a>
+            <a href="#"><span><i class="far fa-envelope"></i></span>{{ statistics.unReadMessages }}</a>
         </div>
         <div class="nav-info-items">
-            <a href="#"><span><i class="far fa-comment-alt"></i></span>68</a>
+            <a href="#"><span><i class="far fa-comment-alt"></i></span>{{ statistics.inMessages }}</a>
         </div>
         <div class="nav-info-items">
-            <a href="#"><span><i class="far fa-comment-alt"></i></span>15</a>
+            <a href="#"><span><i class="far fa-comment-alt"></i></span>{{ statistics.outMessages }}</a>
         </div>
         <div class="nav-info-items">
-            <a href="#"><span><i class="fas fa-phone-alt"></i></span>58</a>
+            <a href="#"><span><i class="fas fa-phone-alt"></i></span>{{ statistics.calls }}</a>
         </div>
         <div class="nav-info-items">
-            <a href="#"><span><i class="fas fa-mobile-alt"></i></span>15</a>
+            <a href="#"><span><i class="fas fa-mobile-alt"></i></span>{{ statistics.mobile }}</a>
         </div>
         <div class="button-menu" (click)="onToggle()">
             <i class="fas fa-chevron-right" *ngIf="toggle"></i>

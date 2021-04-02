@@ -8,23 +8,19 @@ import { CampaignService } from 'src/app/services/campaign.service';
   templateUrl: './campaign.component.html',
   styleUrls: ['./campaign.component.scss']
 })
-export class CampaignComponent implements OnInit, OnDestroy {
+export class CampaignComponent implements OnInit {
 
   campaigns: Campaign[] = [];
-  campaignSubscription: Subscription;
 
   constructor(private campaignService : CampaignService) { }
 
   ngOnInit(): void {
-    this.campaignSubscription = this.campaignService.campaignsEmitter.subscribe(data =>{
-      this.campaigns = data;
-    });
     
-    this.campaignService.getCampaigns();
+    this.campaignService.getCampaigns().subscribe( camp => {
+      this.campaigns = camp;
+    }, error =>{
+      console.log(error);
+    });
   }
   
-  ngOnDestroy(){
-    this.campaignSubscription.unsubscribe();
-  }
-
 }

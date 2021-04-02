@@ -1,4 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Statistic } from 'src/app/models/statistics.model';
+import { StatisticsSevice } from 'src/app/services/statistics.service';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +12,17 @@ export class HeaderComponent implements OnInit {
 
   toggle = false;
   @ViewChild('subMenu') submenu: ElementRef;
+  statistics: Statistic;
+  subStats: Subscription;
 
-  constructor(private render: Renderer2) { }
+  constructor(private render: Renderer2, private statisticsService: StatisticsSevice) { }
 
   ngOnInit(): void {
+    this.statisticsService.statsSub.subscribe(data => {
+      this.statistics = data;
+    });
+    
+    this.statisticsService.getStatistics();
   }
 
   onToggle() {

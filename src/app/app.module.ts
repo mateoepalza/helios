@@ -8,6 +8,7 @@ import { CampaignComponent } from './components/campaign/campaign.component';
 import { AppRoutesModule } from './app.routes.module';
 import { CampaignItemComponent } from './components/campaign/campaign-item/campaign-item.component';
 import { DatePipe } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DatePipe } from '@angular/common';
   ],
   imports: [
     BrowserModule,
-    AppRoutesModule
+    AppRoutesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

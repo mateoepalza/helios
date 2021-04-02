@@ -12,7 +12,15 @@ $secondary-bg: rgba(0,0,36,1);
 .nav-logo{
     width: 200px;
     height: auto;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    img{
+        width: inherit;
+    }
 }
 .nav-info{
     width: calc(100% - 400px);

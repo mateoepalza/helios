@@ -1,5 +1,7 @@
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { Subject, throwError } from "rxjs";
+import { catchError, map } from "rxjs/operators";
 import { Campaign } from "../models/campaign.model";
 
 @Injectable({
@@ -7,44 +9,28 @@ import { Campaign } from "../models/campaign.model";
 })
 export class CampaignService {
 
-    campaignsEmitter = new Subject<Campaign[]>();
+    constructor(private http : HttpClient){
+        
+    }
 
-    campaigns: Campaign[] = [
-        {
-            _id: "5646545",
-            title: "Celular apagado",
-            status: "Programada",
-            createdAt: new Date(),
-            type: "Promoción",
-            users: 0,
-            sentAt: new Date()
-        },
-        {
-            _id: "fsd564654ds",
-            title: "Celular prendido",
-            status: "Programada",
-            createdAt: new Date(),
-            type: "Promoción",
-            users: 100,
-            sentAt: new Date()
-        },
-        {
-            _id: "sdf465fsd4",
-            title: "Sin celular",
-            status: "Programada",
-            createdAt: new Date(),
-            type: "Promoción",
-            users: 500,
-            sentAt: new Date()
-        }
-    ]
-    
     getCampaigns(){
-        this.campaignsEmitter.next(this.campaigns.slice());
+        return this.http.get<Campaign[]>(
+            "https://smartsoft-b6882-default-rtdb.firebaseio.com/campaigns.json"
+        ).pipe(
+            catchError(this.handleError),
+            map( data => {
+                const resCampaigns: Campaign[] = []; 
+                
+                for(let elem of data){
+                    resCampaigns.push(elem);
+                }
+                
+                return resCampaigns;
+            })
+        )
     }
     
     getCampaign(_id: string){
-        this.campaignsEmitter.next([this.campaigns.find((elem) => elem._id === _id)]);
     }
     
     updateCampign(){
@@ -52,8 +38,9 @@ export class CampaignService {
     }
     
     deleteCampaign(_id: string){
-        const index = this.campaigns.findIndex( elem => elem._id === _id);
-        this.campaigns.splice(index, 1);
-        this.campaignsEmitter.next(this.campaigns);
+    }
+    
+    handleError(error : HttpErrorResponse){
+        return throwError("")
     }
 }
