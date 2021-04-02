@@ -1,0 +1,6 @@
+@mixin flex-box($flow, $justify, $align){
+   display: flex; 
+   flex-flow: $flow;
+   justify-content: $justify;
+   align-items: $align;
+}

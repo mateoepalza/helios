@@ -1,6 +1,9 @@
+@import '../../../../sass/mixins';
+@import '../../../../sass/variables';
+
+
 .campaign-item{
-    display: flex;
-    flex-flow: row nowrap;
+    @include flex-box(row nowrap, normal, normal);    
     border-radius: 15px;
     border: 1px solid #3E568C;
     margin-bottom: 25px;
@@ -9,10 +12,7 @@
 }
 .campaign-image{
     width: 20%;   
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    @include flex-box(column nowrap, center, center);
     border-right: 4px solid #9169A8;
 }
 .campaign-image-title{
@@ -32,8 +32,7 @@
     width: 80%;
 }
 .row-c{
-    display: flex;
-    flex-flow: row nowrap;
+    @include flex-box(row nowrap, normal, normal);
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 .row-c:last-child{
@@ -41,18 +40,16 @@
 }
 .col-c{
     width: 50%;
-    display: flex;
-    flex-flow: row;
+    @include flex-box(row, normal, normal);
     padding: 20px 15px;
 }
 .col-c:nth-child(odd){
     border-right: 1px solid rgba(255,255,255,0.3);
 }
 .col-c-icon{
-    display: flex;
+    @include flex-box(row, normal, center);
     width: 70px;
     margin-left: 25px;
-    align-items: center;
     font-size: 35px;
     color: #9169A8;
 }
@@ -97,11 +94,11 @@
 
 @media (max-width: 991.98px){
     .campaign-item{
-        flex-flow: column nowrap
+        @include flex-box(column nowrap, normal, normal);
     }
     .campaign-image{
         width: 100%;
-        flex-flow: row nowrap;
+        @include flex-box(row nowrap, normal, normal);
         border: 0px;
         border-bottom: 3px solid #9169A8;
         
@@ -121,7 +118,7 @@
 }
 @media (max-width: 767.98px){
     .row-c{
-        flex-flow: row wrap;
+        @include flex-box(row nowrap, normal, normal);
         border: 0px !important;
     }
     .col-c{

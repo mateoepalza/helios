@@ -1,48 +1,36 @@
-$primary-bg: rgba(1,34,77,1);
-$secondary-bg: rgba(0,0,36,1);
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
 .nav-container{
     width: 100%;
     height: 70px;
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row;
+    @include flex-box(row nowrap, space-between, center); 
     padding: 10px;
-    background: linear-gradient(90deg, rgba(1,34,77,1) 33%, rgba(0,0,36,1) 100%);;
+    background: linear-gradient(90deg, $primary-bg 33%, $secondary-bg 100%);
 }
 .nav-logo{
     width: 200px;
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    @include flex-box(row nowrap, center, center);
     img{
         width: inherit;
     }
 }
 .nav-info{
     width: calc(100% - 400px);
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
+    @include flex-box(row nowrap, space-evenly, center);
     transition: 1s;
 }
 .nav-config{
     width: 200px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    @include flex-box(row nowrap, space-around, normal);
     a{
         font-size: 30px;
         color: #677DD1;
     }
 }
 .nav-info-items{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
+    @include flex-box(column nowrap, center, normal);
     height: auto; 
     background-color: rgba(0,0,36,1);
     background-color: transparent !important;
@@ -61,7 +49,6 @@ $secondary-bg: rgba(0,0,36,1);
     display: none !important;
     width: 25px;
     height: 25px;
-    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
@@ -92,13 +79,11 @@ $secondary-bg: rgba(0,0,36,1);
        display: flex;
        flex-flow: column nowrap;
 
-        background: linear-gradient(180deg,  rgba(0,0,36,1) 100%, rgba(1,34,77,1) 33%);
+        background: linear-gradient(180deg, $secondary-bg 100%, $primary-bg 33%);
    } 
    .nav-info-items{
        a{
-           display: flex;
-           flex-flow: row;
-           justify-content: center;
+           @include flex-box(row, center, normal);
            font-size: 18px;
            span{
                display: block;
@@ -111,6 +96,4 @@ $secondary-bg: rgba(0,0,36,1);
        display: flex !important;
    }
 }
-@media (max-width: 767.98px){
     
-}

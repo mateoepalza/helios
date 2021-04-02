@@ -1,11 +1,13 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
 .app-container{
-    display: flex;
-    flex-flow: column nowrap; 
+    @include flex-box(column nowrap, normal, normal);
     overflow: hidden;
+    background: linear-gradient(360deg, rgba(1,34,77,1) 50%, rgba(0,0,36,1) 100%);
 }
 .app-content{
-   display: flex; 
-   flex-flow: row nowrap;
+    @include flex-box(row nowrap, normal, normal);
 }
 .sand-box-container{
     width: 100%;
