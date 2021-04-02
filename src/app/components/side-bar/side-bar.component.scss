@@ -1,9 +1,13 @@
+.side-bar-movement{
+    position: relative;
+    transition: 1s;
+}
 .side-bar-container{
     width: 220px;
     height: calc(100vh - 70px);
-    top: 70px;
     background: linear-gradient(180deg, rgba(1,34,77,1) 33%, rgba(0,0,36,1) 100%);
     overflow-y: auto;
+    position:relative;
 }
 .side-bar-item{
     width: 100%;
@@ -39,4 +43,20 @@
 }
 .side-bar-item:hover{
     background-color: #14356A;
+}
+.button-menu{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #6697FD;
+    position: absolute;
+    right: -20px;
+    bottom: calc(30% - 70px);
+    z-index: 1000;
+}
+.hide{
+    transform: translateX(-200px)
 }

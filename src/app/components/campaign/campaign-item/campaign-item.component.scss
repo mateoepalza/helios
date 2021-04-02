@@ -110,11 +110,26 @@
         margin: 0px;
     }
     .campaign-image-icon{
+        margin-left: 15px;
         i{
-            font-size: 25px;
+            font-size: 20px;
         }
     }
     .campaign-info{
         width: 100%
+    }
+}
+@media (max-width: 767.98px){
+    .row-c{
+        flex-flow: row wrap;
+        border: 0px !important;
+    }
+    .col-c{
+        width: 100%;
+        border: 0px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.3) !important;
+    }
+    .col-c:last-child{
+        border: 0px !important;
     }
 }
