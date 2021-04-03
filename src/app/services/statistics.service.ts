@@ -13,7 +13,8 @@ export class StatisticsSevice{
      * uso un subject porque los numeros que se encuentran en el header
      * son algo que puede ir cambiando a lo largo que yo interactuo con la plataforma
      * es decir pueden ir decrementando si yo realizo una acción y yo quiero que se
-     * recaguen automaticamente yo hago una acccion
+     * recaguen automaticamente sin tener que volver a cargar o crear el componente y por lo que
+     * es un header es muy poco probable que se vuelva a cargar el componente
      */
     statsSub = new Subject<Statistic>();
 
@@ -32,7 +33,7 @@ export class StatisticsSevice{
 
     handleErrors(error : HttpErrorResponse){
         let msg = "Ocurrió algo inesperado";
-        console.log(error);
+
         if(!error.error || !error.error.code){
             throwError(msg);
         }
