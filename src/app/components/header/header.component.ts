@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Statistic } from 'src/app/models/statistics.model';
 import { StatisticsSevice } from 'src/app/services/statistics.service';
@@ -8,7 +8,7 @@ import { StatisticsSevice } from 'src/app/services/statistics.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   toggle = false;
   @ViewChild('subMenu') submenu: ElementRef;
@@ -18,11 +18,15 @@ export class HeaderComponent implements OnInit {
   constructor(private render: Renderer2, private statisticsService: StatisticsSevice) { }
 
   ngOnInit(): void {
-    this.statisticsService.statsSub.subscribe(data => {
+    this.subStats = this.statisticsService.statsSub.subscribe(data => {
       this.statistics = data;
     });
     
     this.statisticsService.getStatistics();
+  }
+  
+  ngOnDestroy(){
+    this.subStats.unsubscribe();
   }
 
   onToggle() {
